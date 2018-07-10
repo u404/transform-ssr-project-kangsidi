@@ -1,0 +1,69 @@
+{
+  "Source": [{
+      "title": "工作表名称",
+      "name": "tableName"
+    },
+    {
+      "title": "更新时间",
+      "name": "time"
+    }
+  ],
+  "JournalEntry": [{
+      "title": "凭证日期",
+      "name": ""
+    },
+    {
+      "title": "凭证年",
+      "name": ""
+    },
+    {
+      "title": "凭证月",
+      "name": ""
+    },
+    {
+      "title": "凭证号",
+      "name": ""
+    },
+    {
+      "title": "摘要",
+      "name": ""
+    },
+    {
+      "title": "科目编码",
+      "name": ""
+    },
+    {
+      "title": "借贷",
+      "name": ""
+    },
+    {
+      "title": "金额",
+      "name": ""
+    },
+    {
+      "title": "成本中心编码",
+      "name": ""
+    },
+    {
+      "title": "订单编号",
+      "name": ""
+    },
+    {
+      "title": "公司编码",
+      "name": ""
+    }
+  ],
+  "Budget": [{
+      "title": "公司编码",
+      "name": "time"
+    },
+    {
+      "title": "成本中心编码",
+      "name": "time"
+    },
+    {
+      "title": "预算科目编码",
+      "name": "time"
+    }
+  ]
+}

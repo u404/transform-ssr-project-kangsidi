@@ -1,0 +1,39 @@
+{
+  "title": "管理中心",
+  "menuList": [{
+      "icon": "icon-setting",
+      "name": "系统设置",
+      "children": [{
+          "name": "基础数据",
+          "path": "/SourceData"
+        },
+        {
+          "name": "序时帐数据",
+          "path": "/JournalData"
+        },
+        {
+          "name": "预算数据",
+          "path": "/BudgetData"
+        }
+      ]
+    },
+    {
+      "icon": "icon-list",
+      "name": "问题清单",
+      "children": [{
+          "name": "汇总列表",
+          "path": "/SummaryData"
+        },
+        {
+          "name": "填报列表",
+          "path": "/FillReport"
+        }
+      ]
+    },
+    {
+      "icon": "icon-report",
+      "name": "查询报告",
+      "path": "/QueryReport"
+    }
+  ]
+}

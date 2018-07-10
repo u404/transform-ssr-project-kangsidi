@@ -1,0 +1,65 @@
+.nav-bar {
+  background: $color-active-light;
+  color: $color-white;
+  .container {
+    @include flex(row, space-between, stretch);
+    height: 60px;
+    padding: 0 24px 0 36px;
+  }
+  .logo {
+    flex: 0 0 auto;
+    width: 38px;
+    background: url(../../assets/images/logo.png) left center no-repeat;
+  }
+  .user-box {
+    flex: 0 0 auto;
+    @include flex();
+    position: relative;
+    cursor: pointer;
+    .user-avator {
+      width: 18px;
+      height: 18px;
+      background: url(../../assets/images/icons.png) -72px 0 no-repeat;
+      margin-right: 10px;
+    }
+    .user-name {
+      min-width: 3em;
+      font-size: $font-h6;
+    }
+    &:after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: url(../../assets/images/icons.png) -30px -20px no-repeat;
+      margin-left: 5px;
+    }
+  }
+  .dropdown-menu-box {
+    position: relative;
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      margin-top: -10px;
+      right: 0;
+      display: none;
+      background: $color-white;
+      border: $border-default;
+      color: $color-default;
+      .menu-list {
+        .menu {
+          display: block;
+          white-space: nowrap;
+          line-height: 30px;
+          width: 82px;
+          text-align: center;
+          cursor: pointer;
+        }
+      }
+    }
+    &:hover {
+      .dropdown-menu {
+        display: block;
+      }
+    }
+  }
+}

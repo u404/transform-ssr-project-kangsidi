@@ -1,0 +1,83 @@
+.fill-report-wrap {
+  .control-bar {
+    @include flex();
+    height: 72px;
+    padding: 0 $margin-default;
+    .time-filter-box {
+      select,
+      option {
+        height: 22px;
+      }
+      .year-select,
+      .month-select {
+        margin-right: 8px;
+        width: 90px;
+      }
+      .company-select {
+        width: 170px;
+      }
+      .tips {
+        margin-left: 16px;
+        padding-left: 24px;
+        line-height: 18px;
+        color: $color-warning-text;
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 18px;
+          height: 18px;
+          background: url(../../assets/images/icons.png) 0 -40px no-repeat;
+        }
+      }
+    }
+    .btn-box {
+      .query-btn {
+        @include btn-size(80px, 25px);
+      }
+      .report-btn {
+        @include btn-size(130px, 25px);
+        margin-left: $margin-default;
+      }
+    }
+  }
+  .build-dialog {
+    .form-item {
+      @include flex($jus: flex-start);
+      margin: 0 auto;
+      width: 240px;
+      .form-label {
+        width: 64px;
+        margin-right: 10px;
+        font-size: $font-default;
+        text-align: left;
+      }
+      .form-input {
+        width: 146px;
+        margin-right: 5px;
+        height: 24px;
+        font-size: 12px;
+      }
+      .form-text {
+        font-size: 12px;
+      }
+      &:nth-child(n+2) {
+        margin-top: 14px;
+      }
+    }
+  }
+  .input-error-tips {
+    .tips-label {
+      padding-left: 20px;
+      color: $color-error;
+    }
+    .tips-content-wrap {
+      margin-top: 15px;
+      font-size: 12px;
+      @include flex($jus: center, $ali: flex-start);
+      text-align: left;
+    }
+  }
+}
