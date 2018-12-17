@@ -2,7 +2,6 @@ import Vue from 'vue'
 
 import Router from 'vue-router'
 
-import store from '../store'
 import Manage from '@/views/Manage'
 import Index from '@/views/Index' // 命名chunk，内部注释是必须的
 
@@ -14,13 +13,13 @@ const manageRouter = {
   path: '/',
   name: 'Manage',
   component: Manage,
-  beforeEnter: (to, from, next) => {
-    store.dispatch('userCheckLogin').then(() => {
-      next()
-    }).catch(() => {
-      router.push('/Login/back')
-    })
-  },
+  // beforeEnter: (to, from, next) => {
+  //   store.dispatch('userCheckLogin').then(() => {
+  //     next()
+  //   }).catch(() => {
+  //     router.push('/Login/back')
+  //   })
+  // },
   children: [{
     path: '/',
     name: 'Index',
@@ -90,26 +89,26 @@ const manageRouter = {
   ]
 }
 
-const router = new Router({
-  routes: [
-    manageRouter,
-    {
-      // 支持/Login、/Login/back、/Login/redirectUrl=encodeURIComponent(path)
-      path: '/Login/:action?/',
-      name: 'Login',
-      component: Login,
-      props: (route) => ({
-        ...route.params,
-        redirectUrl: route.query.redirectUrl
-      }),
-      beforeEnter: (to, from, next) => {
-        if (!from.name) {
-          to.params.action = ''
+export function createRouter () {
+  return new Router({
+    routes: [
+      manageRouter,
+      {
+        // 支持/Login、/Login/back、/Login/redirectUrl=encodeURIComponent(path)
+        path: '/Login/:action?/',
+        name: 'Login',
+        component: Login,
+        props: (route) => ({
+          ...route.params,
+          redirectUrl: route.query.redirectUrl
+        }),
+        beforeEnter: (to, from, next) => {
+          if (!from.name) {
+            to.params.action = ''
+          }
+          next()
         }
-        next()
       }
-    }
-  ]
-})
-
-export default router
+    ]
+  })
+}

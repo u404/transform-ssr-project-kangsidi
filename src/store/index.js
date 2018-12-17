@@ -23,10 +23,12 @@ const modules = {
   user
 }
 
-export default new Vuex.Store({
-  state,
-  getters,
-  mutations,
-  actions,
-  modules
-})
+export function createStore() {
+  return new Vuex.Store({
+    state,
+    getters,
+    mutations,
+    actions,
+    modules
+  })
+}

@@ -189,13 +189,14 @@ export default {
       if (this.onlyYearSelect) {
         return this.selectedDate.fromYear + '-01-01'
       }
-      return this.selectedDate.fromYear +
-        '-' + (
-        this.selectedDate.fromMonth < 10
+      return (
+        this.selectedDate.fromYear +
+        '-' +
+        (this.selectedDate.fromMonth < 10
           ? '0' + this.selectedDate.fromMonth
-          : this.selectedDate.fromMonth
-      ) +
+          : this.selectedDate.fromMonth) +
         '-01'
+      )
     },
     getFilterEnd () {
       if (this.onlyYearSelect) {

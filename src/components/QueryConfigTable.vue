@@ -51,17 +51,19 @@ export default {
         this.$refs['numInput' + index].focus()
       })
     },
-    editSuccess(value) {
+    editSuccess (value) {
       let item = this.dataList[this.editIndex]
       item.val = +value
       this.saveParam(item['name'], value)
     },
     loadParams () {
-      this.$services.manage.getConfigs({
-        param_name: ['baogao_jine']
-      }).then(res=>{
-        this.unit = res.data[0].val
-      })
+      this.$services.manage
+        .getConfigs({
+          param_name: ['baogao_jine']
+        })
+        .then(res => {
+          this.unit = res.data[0].val
+        })
       this.$services.manage
         .getConfigs({
           param_name: [

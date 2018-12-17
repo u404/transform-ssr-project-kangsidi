@@ -223,22 +223,28 @@ export default {
       }
     },
     resetItem (id) {
-      this.$set(this.cacheData[id].item, 'report', this.cacheData[id].oldData.report)
+      this.$set(
+        this.cacheData[id].item,
+        'report',
+        this.cacheData[id].oldData.report
+      )
     },
     updateReportItemReason (id, text) {
-      this.$services.manage.updateData({
-        work: 'wentireport',
-        params: {
-          report_id: id,
-          report_text: text
-        }
-      }).catch(() => {
-        this.resetItem(id)
-        this.$dialog.alert({
-          type: 'error',
-          msg: '自动保存失败，该条原因已被还原'
+      this.$services.manage
+        .updateData({
+          work: 'wentireport',
+          params: {
+            report_id: id,
+            report_text: text
+          }
         })
-      })
+        .catch(() => {
+          this.resetItem(id)
+          this.$dialog.alert({
+            type: 'error',
+            msg: '自动保存失败，该条原因已被还原'
+          })
+        })
     },
 
     loadDataList () {
